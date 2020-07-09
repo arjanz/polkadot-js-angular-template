@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Network} from './classes/network.class';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'balance-checker';
+  title = 'polkadot-js-angular-template';
+
+  networks: Network[] = [
+    {
+      name: 'Polkadot',
+      nodeUrl: 'wss://rpc.polkadot.io',
+      conversionRate: 110,
+      startBlock: 326550,
+      defaultAddress: '13uW7auWPX9WAtqwkBx7yagb78PLcv8FAcPZEVCovbXoNJK4'
+    },
+    {
+      name: 'Kusama',
+      nodeUrl: 'wss://kusama-rpc.polkadot.io/',
+      conversionRate: 7,
+      startBlock: 2710000,
+      defaultAddress: 'EqyCQvYn1cHBdzFVQHQeL1nHDcxHhjWR8V48KbDyHyuyCGV'
+    },
+  ];
 }

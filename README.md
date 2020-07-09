@@ -1,6 +1,11 @@
-# BalanceChecker
+# Polkadot-JS API Angular template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+This project contains example code how to integrate the Polkadot-JS API library (https://github.com/polkadot-js/api) in an 
+Angular project. 
+
+* Necessary compatibility changes to `polyfills.ts` and `angular.json`
+* Basic `PolkadotJsService`
+* Example application to view balance mutations 
 
 ## Development server
 
