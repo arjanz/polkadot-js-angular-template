@@ -70,6 +70,8 @@ export class BalanceMutationOverviewComponent implements OnInit {
         prevAmount = accountInfo.data.free.toBn();
         blockEnd = i;
 
+        this.dataSource.data = this.data;
+
     }
     const blockHash = await this.api.rpc.chain.getBlockHash(this.addressForm.value.endBlock);
     const accountInfo = await this.api.query.system.account.at(blockHash, this.addressForm.value.address);
