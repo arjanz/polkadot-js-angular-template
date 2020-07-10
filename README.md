@@ -7,6 +7,12 @@ Angular project.
 * Basic `PolkadotJsService`
 * Example application to view balance mutations 
 
+## Run from Docker
+
+* `docker-compose up --build`
+* Navigate to `http://localhost:8080/`
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

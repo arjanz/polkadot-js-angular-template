@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  angular-docker:
+    container_name: polkadot-js-angular-template
+    build: .
+    ports:
+      - '8080:80'
