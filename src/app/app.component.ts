@@ -7,13 +7,13 @@ import {Network} from './classes/network.class';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'polkadot-js-angular-template';
+  title = 'Balance mutation overview';
 
   networks: Network[] = [
     {
       name: 'Polkadot',
       nodeUrl: 'wss://rpc.polkadot.io',
-      conversionRate: 110,
+      conversionRate: 115,
       startBlock: 326550,
       defaultAddress: '13uW7auWPX9WAtqwkBx7yagb78PLcv8FAcPZEVCovbXoNJK4'
     },

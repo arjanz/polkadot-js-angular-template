@@ -42,32 +42,31 @@
     </mat-card-actions>
   </mat-card>
 </form>
-<mat-card class="shipping-card">
+<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-card *ngIf="!loading">
   <mat-card-content>
-<mat-table [dataSource]="dataSource">
-  <ng-container matColumnDef="blockStart">
-    <mat-header-cell *matHeaderCellDef> Start </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.blockStart}} </mat-cell>
-  </ng-container>
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="blockStart">
+        <mat-header-cell *matHeaderCellDef> Start </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.blockStart}} </mat-cell>
+      </ng-container>
 
-  <ng-container matColumnDef="blockEnd">
-    <mat-header-cell *matHeaderCellDef> End </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.blockEnd}} </mat-cell>
-  </ng-container>
+      <ng-container matColumnDef="blockEnd">
+        <mat-header-cell *matHeaderCellDef> End </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.blockEnd}} </mat-cell>
+      </ng-container>
 
-  <ng-container matColumnDef="amount">
-    <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.amount / 1000000000000}} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="value">
-    <mat-header-cell *matHeaderCellDef> Value </mat-header-cell>
-    <mat-cell *matCellDef="let row">{{(row.value / 1000000000000 | currency:'EUR')}} </mat-cell>
-  </ng-container>
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.amount / 1000000000000}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="value">
+        <mat-header-cell *matHeaderCellDef> Value </mat-header-cell>
+        <mat-cell *matCellDef="let row">{{(row.value / 1000000000000 | currency:'EUR')}} </mat-cell>
+      </ng-container>
 
-  <mat-header-row *matHeaderRowDef="['blockStart', 'blockEnd', 'amount', 'value']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['blockStart', 'blockEnd', 'amount', 'value']"></mat-row>
-</mat-table>
+      <mat-header-row *matHeaderRowDef="['blockStart', 'blockEnd', 'amount', 'value']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['blockStart', 'blockEnd', 'amount', 'value']"></mat-row>
+    </mat-table>
   </mat-card-content>
 </mat-card>
-
-<!--<app-balance-overview *ngIf="data?.length > 0" [dataSource]="data"></app-balance-overview>-->
